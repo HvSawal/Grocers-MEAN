@@ -1,0 +1,71 @@
+<div>
+    <form #userRef="ngForm" (ngSubmit)="storeUser(userRef.value)">
+        <h2>USER Registration Form</h2>
+        <table>
+          <tr>
+            <td><label for="name">FirstName :</label></td>
+            <td><input type="text" name="firstName" id="name" required  ngModel/></td>
+          </tr>
+          
+          <tr>
+            <td><label for="lname">LastName :</label></td>
+            <td><input type="text" name="lastName" id="father_name" required ngModel/></td>
+          </tr>
+          
+          <tr>
+            <td><label for="address">Address :</label></td>
+            <td><input type="text" name="address" id="address" required ngModel/></td>
+          </tr>
+          
+          <tr>
+            <td><label for="state">State :</label></td>
+            <td><input type="text" name="state" id="state" required ngModel/>
+                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span></td>
+          </tr>
+                
+          <tr>
+            <td><label for="city">City :</label></td>
+            <td><input type="text" name="city" id="city" required ngModel/>
+                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span></td>
+          </tr>
+               
+
+          <tr>
+            <td>  <label for="birth_date">DOB :</label></td>
+            <td><input type="date" name="dob" id="birth_date" ngModel></td>
+          </tr>
+        
+          <tr>
+            <td>  <label for="pincode">Pincode :</label></td>
+            <td>  <input type="text" name="pincode" id="pincode" ngModel></td>
+          </tr>
+      
+        
+          <tr>
+            <td>  <label for="pnum">Phone Number :</label></td>
+            <td>  <input type="tel" name="phone" id="pnum"  ngModel/></td>
+          </tr>
+       
+          <tr>
+            <td>  <label for="email">Email ID :</label></td>
+            <td>  <input type="email" name="emailId" id="email" ngModel/></td>
+          </tr>
+
+          <tr>
+            <td>  <label for="email">user id :</label></td>
+            <td>  <input type="text" name="userId" id="uid" ngModel/></td>
+          </tr>
+       
+          <tr>
+            <td>  <label for="password">Password :</label></td>
+            <td>  <input type="password" name="password" id="pass" ngModel/></td>
+          </tr>
+        
+          <tr> 
+            <td> <input type="reset" value="Reset All" class="submit" name="reset" id="reset" /></td>
+            <td>  <input type="submit" value="Signup" class="submit" name="submit" id="submit" /></td>
+          </tr>
+       
+      </table>
+    </form>
+</div>

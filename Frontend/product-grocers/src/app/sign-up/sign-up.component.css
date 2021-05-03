@@ -1,0 +1,44 @@
+
+    table{
+        margin-left: 350px;
+    }
+    tr{
+        margin-left: 0px;
+    }
+select,input[type=text],[type=password],[type=email],[type=number]{
+    padding-left: 5px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 0.4em;
+}
+input[type=submit],[type=reset]{
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0px;
+  text-align: center;
+
+}
+label{
+    padding-left:0px;
+    text-decoration-style: double;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+h2{
+    text-decoration-style: double;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+tr,td,table{
+  width:50%;
+}

@@ -1,0 +1,89 @@
+<div>
+  <form #reportRef="ngForm" (ngSubmit)="GenerateReports(reportRef.value)">
+    <h2>GENERATING REPORTS</h2>
+    <table>
+
+
+
+      <tr>
+        <td> <label for="repo">Report :</label></td>
+        <td> <select [(ngModel)]="option" name="time" id="#" required ngModel>
+            <option selected="selected" value="daily">Daily Reports</option>
+            <option value="range">Report Date Range</option>
+            <!--<option value="monthly">Monthly Report</option>
+                <option value="four">Product Report</option>
+                <option value="five">Customer Report</option> -->
+          </select></td>
+      </tr>
+      <tr *ngIf="option == 'daily'">
+        <td><label for="">Pick Day:</label></td>
+        <td><input type="date" name="date" id="" ngModel></td>
+      </tr>
+
+      <tr *ngIf="option == 'range'">
+        <td><label for="">Start Date:</label></td>
+        <td><input type="date" name="start" id="" ngModel></td>
+      </tr>
+      <tr *ngIf="option == 'range'">
+        <td><label for="">End Date:</label></td>
+        <td><input type="date" name="end" id="" ngModel></td>
+      </tr>
+      <tr>
+        <td> <input type="reset" value="Reset  All" class="btn btn-danger" name="reset" id="reset" /></td>
+        <td> <input type="submit" value="Generate Reports" class="btn btn-primary" name="submit" id="submit" /></td>
+      </tr>
+
+    </table>
+  </form>
+  <hr/>
+  <div class="card">
+    <div class="card-header">
+      <h2>Orders</h2>
+    </div>
+    <div class="card-body">
+      <h2 *ngIf="ordersPlaced==0" >No orders!</h2>
+
+  <div *ngIf="ordersPlaced>0">
+    Total Spent: {{totalSpent}}
+    <br>
+    Orders placed: {{ordersPlaced}}
+    <br>
+    Products purchased: {{productsBought}}
+  
+
+  <div>
+    
+    <div *ngIf="totalSpent != undefined">
+      <table border="1" class="table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>UserId</th>
+            <th>Date</th>
+            <th>Amt Products</th>
+            <th>Status</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of filteredOrders">
+            <td>{{order._id}}</td>
+            <td>{{order.userId}}</td>
+            <td>{{order.date | date: 'MM/dd/yyyy'}}</td>
+            <td>{{order.products.length}}</td>
+            <td>{{order.status}}</td>
+            <td>${{order.total}}</td>
+          </tr>
+        </tbody>
+
+
+      </table>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  
+</div>
+
+</div>

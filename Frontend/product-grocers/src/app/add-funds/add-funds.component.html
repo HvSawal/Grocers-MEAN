@@ -1,0 +1,18 @@
+<div>
+    <form #userRef="ngForm" (ngSubmit)="addFunds(userRef.value)">
+        <h2>Add Funds</h2>
+        <table>
+        
+            <tr>  <td>  <label for="name">AccountNumber :</label>  </td>
+              <td><input type="number" name="account" id="acc" placeholder={{userId}} required  ngModel/></td></tr>
+        
+            <tr><td>  <label for="lname">Funds :</label></td>
+              <td>  <input type="number" name="funds" id="fund" required ngModel/></td></tr>
+             
+        
+          <tr> <td> <input type="reset" value="Reset All" class="submit btn btn-danger" name="reset" id="reset" /></td>
+          <td>  <input type="submit" value="Add Funds" class="submit btn btn-primary" name="submit" id="submit" /></td></tr>
+       
+      </table>
+    </form>
+</div>

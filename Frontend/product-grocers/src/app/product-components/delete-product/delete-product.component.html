@@ -1,0 +1,27 @@
+<div>
+    <h2>Delete Product</h2>
+    <div>
+        <table border="1" class="table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">PId</th>
+                    <th scope="col">ProductName</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pp of products">
+                        <td>{{pp._id}}</td>
+                        <td>{{pp.name}}</td>
+                        <td>{{pp.price}}</td>
+                        <td>{{pp.quantity}}</td>
+                        <td>{{pp.desc}}</td>
+                        <td><button class="btn btn-danger" (click)="deleteById(pp._id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

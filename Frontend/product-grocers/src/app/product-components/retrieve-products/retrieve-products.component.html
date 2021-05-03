@@ -1,0 +1,26 @@
+<div>
+    <table border="1" class="table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">PId</th>
+                <th scope="col">ProductName</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Description</th>
+                <th scope="col">Item Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pp of products">
+                <td>{{pp._id}}</td>
+                <td>{{pp.name}}</td>
+                <td>${{pp.price}}</td>
+                <td>{{pp.quantity}}</td>
+                <td>{{pp.desc}}</td>
+                <td>${{pp.price * pp.quantity}}</td>
+            </tr>
+        </tbody>
+            
+
+    </table>
+</div>

@@ -1,0 +1,43 @@
+<div>
+    <h2>Update Order Using ID</h2>
+    <form #orderRef="ngForm" (ngSubmit)="updateOrder(orderRef.value)">
+        <table>
+            <tr>
+                <td><label>Order Id:</label></td>
+                <td><input type="text" name="pid" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>Status:</label></td>
+                <td><select [(ngModel)]="option" name="status" ngModel>
+                    <option value="delivered">Delivered</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="out for delivery ">Out for delivery </option>
+                    <option value="pending">Pending</option>
+                    <option value="cancelled">Cancelled</option>
+                  </select><br/></td>
+            </tr>
+            <tr *ngIf= "option == 'cancelled'">
+                <td><label>Reason</label></td>
+                <td><input type="text" name="reason" ngModel/><br/></td>
+            </tr>
+        </table>
+          
+        <input type="submit" class="btn btn-primary" value="Update the Status"/>
+    </form>
+    {{updateMsg}}
+</div>
+
+<div>
+    <table border="1">
+            <tr>
+                <th>Order id</th>
+                <th>Order Status</th>
+                <th>UserId</th>
+            </tr>
+            <tr *ngFor="let order of orders">
+                    <td>{{order._id}}</td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.userId}}</td>
+            </tr>
+    </table>
+</div>

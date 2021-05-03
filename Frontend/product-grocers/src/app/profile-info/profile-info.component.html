@@ -1,0 +1,42 @@
+<div>
+    <h2>Edit Profile</h2>
+    <form #userRef="ngForm" (ngSubmit)="updateUser(userRef.value)">
+        <table>
+            <tr>
+                <td><label>User ID:</label></td>
+                <td><input [disabled]="true" [(ngModel)]="user._id" type="text" name="_id" ngModel /></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input [(ngModel)]="user._id" type="password" name="password" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>Address:</label></td>
+                <td><input [(ngModel)]="user.address" type="text" name="address" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>State:</label></td>
+                <td><input [(ngModel)]="user.state" type="text" name="state" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>City:</label></td>
+                <td><input [(ngModel)]="user.city" type="text" name="city" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>Pincode:</label></td>
+                <td><input [(ngModel)]="user.pincode" type="text" name="pincode" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>Phone:</label></td>
+                <td><input [(ngModel)]="user.phone" type="text" name="phone" ngModel/><br/></td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input [(ngModel)]="user.emailId" type="text" name="emailId" ngModel/><br/></td>
+            </tr>
+            
+            <input type="submit" class="btn btn-primary" value="Edit Profile"/>
+        </table>
+        
+    </form>
+</div>

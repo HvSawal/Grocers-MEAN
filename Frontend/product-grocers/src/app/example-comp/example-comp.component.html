@@ -1,0 +1,10 @@
+<div>
+    <!-- Template driven form -->
+    <form #exRef="ngForm" (ngSubmit)="showExample(exRef.value)">
+        <label>Example</label>
+        <input type="text" name="exmpl" ngModel>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</div>

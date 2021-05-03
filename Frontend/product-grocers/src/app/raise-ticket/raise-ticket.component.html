@@ -1,0 +1,23 @@
+   
+    <h2>Raise a ticket</h2>
+    <form #ticketRef="ngForm" (ngSubmit)="submitTicket(ticketRef.value)">
+        <table>
+            <tr>
+                <td><label>User ID: </label></td>
+                <td><input type="text" name="userID" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Name: </label></td>
+                <td><input type="text" name="name" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Reason: </label></td>
+                <td><input type="text" name="reason" ngModel><br/></td>
+            </tr>
+        </table>
+        <input type="submit" class="btn btn-primary" value="Submit Ticket!"/>
+    </form>
+    <!-- <a routerLink="/sign-up">Sign Up!</a> -->
+    <!-- <a routerLink="/raise-ticket">Unlock Account</a> -->
+
+

@@ -1,0 +1,25 @@
+<div>
+    <h2>Delete Employee</h2>
+    <div>
+        <table border="1" class="table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employees">
+                    <td>{{e._id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.email}}</td>
+                    <td><button *ngIf="e.isAdmin == false" class="btn btn-danger" (click)="deleteById(e._id)">Delete Employee</button> <div *ngIf="e.isAdmin == true"><strong></strong>Admin</div></td>
+                </tr>
+            </tbody>
+                
+    
+        </table>
+    </div>
+</div>

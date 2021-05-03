@@ -1,0 +1,34 @@
+
+<div>
+    <div>
+        <button type="button" class="btn btn-lg btn-primary" disabled>Current Funds: {{user[0].funds}}</button>
+    </div>
+    <span>Total: {{cart[0].total}}</span><br/>
+    <span>UserId: {{cart[0].userId}}</span><br/>
+    <span>Products:</span><br/>
+    <table border="1" class="table-bordered">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>ProductName</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+            
+        <tbody>
+            <tr *ngFor="let pp of cart[0].products">
+                <td>{{pp.productId}}</td>
+                <td>{{pp.productName}}</td>
+                <td>{{pp.price}}</td>
+                <td>{{pp.qty}}</td>
+        </tr>
+        </tbody>
+            
+
+    </table>
+
+    <button type="button" class="btn btn-sm btn-primary" *ngIf="user[0].funds < cart[0].total" (click)="checkout()" disabled>Buy</button>
+    <button type="button" class="btn btn-sm btn-primary" *ngIf="user[0].funds > cart[0].total" (click)="checkout()">Buy</button>
+
+</div>

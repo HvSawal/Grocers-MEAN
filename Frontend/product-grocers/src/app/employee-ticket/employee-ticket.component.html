@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tickets</title>
+</head>
+<body>
+    <table id="openTickets" class="table-bordered">
+        <thead>
+            <tr>
+                <th>Ticket ID</th>
+                <th>User Name</th>
+                <th>User ID</th>
+                <th>Reason For Lockout</th>
+                <th>Unlock Account</th>
+            </tr>
+        </thead>
+        
+
+        <tbody>
+            <tr *ngFor = "let ticket of tickets">
+                <td>{{ticket._id}}</td>
+                <td>{{ticket.name}}</td>
+                <td>{{ticket.userID}}</td>
+                <td>{{ticket.reason}}</td>
+                <td style="text-align: center;"><button class="btn btn-danger" (click)="unlockAccount(ticket._id)">Unlock User</button></td>
+            </tr>
+        </tbody>
+        
+        
+        
+    </table>
+</body>
+</html>

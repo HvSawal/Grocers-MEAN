@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Cart</strong>
+    </div>
+    <div class="card-body">
+        <div *ngIf="cartItems.length === 0" class="alert alert-info">Cart is empty!</div>
+        <ul *ngIf="cartItems.length > 0" class="list-group">
+            <li class="list-group-item" *ngFor="let item of cartItems">
+                <app-cart-item [cartItem]="item"></app-cart-item>
+            </li>
+            <li class="list-group-item active">
+                <strong>Total:</strong> {{cartTotal|currency:"USD"}}
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer text-center" >
+        <button type="button" class="btn btn-sm btn-primary" (click)="checkout()" >Checkout & Buy</button>
+    </div>
+</div>

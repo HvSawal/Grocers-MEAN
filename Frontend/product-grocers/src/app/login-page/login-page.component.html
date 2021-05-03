@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-header" style="text-align: center; background-color: #0D6EFD; color: white;">LOGIN PAGE</div>
+    <div class="card-body">
+        <div class="alert alert-danger" role="alert" *ngIf="login === false">
+            <div *ngIf="attemptsLeft > 0">
+                Invalid Credentials, please try again!
+            </div>
+            <div *ngIf="attemptsLeft === 0">
+                Account locked try again later!
+            </div> 
+        </div>
+        
+        <form #loginRef="ngForm" (ngSubmit)="checkLogin(loginRef.value)">
+            <label>Email:</label>
+            <input type="text" name="email" ngModel><br/>
+            <label>Password</label>
+            <input type="password" name="password" ngModel><br/>
+            <input type="submit" class="btn btn-primary" value="Login"/>
+        </form>
+        <span *ngIf="attemptsLeft<3">Attempts left: {{attemptsLeft}}</span><br/>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-outline-primary" routerLink="/sign-up">Sign Up</button>&nbsp;
+        <button type="button" class="btn btn-outline-secondary" routerLink="/raise-ticket">Unlock Account</button>
+    </div>
+</div>
+
+<!-- <div class="myclass login">
+
+    
+
+    <h2>LOGIN PAGE</h2>
+
+    <div class="alert alert-danger" role="alert" *ngIf="login === false">
+        <div *ngIf="attemptsLeft > 0">
+            Invalid Credentials, please try again!
+        </div>
+        <div *ngIf="attemptsLeft === 0">
+            Account locked try again later!
+        </div> 
+    </div>
+    
+    <form #loginRef="ngForm" (ngSubmit)="checkLogin(loginRef.value)">
+        <label>Email:</label>
+        <input type="text" name="email" ngModel><br/>
+        <label>Password</label>
+        <input type="password" name="password" ngModel><br/>
+        <input type="submit" class="btn btn-primary" value="Login"/>
+    </form>
+    <span *ngIf="attemptsLeft<3">Attempts left: {{attemptsLeft}}</span><br/>
+    <button type="button" class="btn btn-outline-primary" routerLink="/sign-up">Sign Up</button>&nbsp;
+    <button type="button" class="btn btn-outline-secondary" routerLink="/raise-ticket">Unlock Account</button>
+
+</div> -->

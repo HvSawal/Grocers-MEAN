@@ -1,0 +1,59 @@
+<div>
+    <h2></h2>
+    <div class="card">
+        <div class="card-header"><strong>Your Orders </strong> <span style="font-size: 15px">[Total:  {{user.orders.length}} ]</span></div>
+        <div class="card-body">
+            <div class="card" *ngFor="let order of user.orders.slice().reverse()">
+                <div class="card-header">Order Id: {{order._id}}</div>
+                <div class="card-body">
+                    <ul>
+                        <li *ngFor="let product of order.products">
+                            {{product.productName}} &nbsp;<span> <strong><em>x</em> {{product.qty}}</strong></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col"><button type="button" class="btn btn-primary" disabled> <strong>Total: ${{order.total}}</strong></button></div>
+                        <div class="col">
+                            <div *ngIf="order.status === 'shipped'" >
+                                <button type="button" class="btn btn-success" disabled><strong>Status: {{order.status | uppercase }}</strong> </button>
+                            </div>
+                            <div *ngIf="order.status === 'pending'">
+                                <button type="button" class="btn btn-warning" disabled><strong>Status: {{order.status | uppercase }}</strong> </button>
+                            </div>
+                            <div *ngIf="order.status === 'cancelled'">
+                                <button type="button" class="btn btn-danger" disabled><strong>Status: {{order.status | uppercase }}</strong> </button>
+                            </div>
+                            <div *ngIf="order.status === 'delivered'">
+                                <button type="button" class="btn btn-outline-success" disabled><strong>Status: {{order.status | uppercase }}</strong> </button>
+                            </div>
+                        </div>
+                        <div class="col"><button type="button" class="btn btn-secondary" disabled>Date: {{order.date | date: 'MM/dd/yyyy' }}</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer alert alert-primary">
+            Total Orders:  {{user.orders.length}}
+        </div>
+    </div>
+    <!-- <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Products</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+            <tr *ngFor="let order of user.orders">
+                    <td>{{order._id}}</td>
+                    <td *ngFor="let product of order.products">{{product.productName}} </td>
+                    <td>${{order.total}}</td>
+                    <td>{{order.status}}</td>
+                    <td>{{order.date | date: 'MM/dd/yyyy' }}</td>
+                    
+            </tr>
+
+    </table> -->
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tickets</title>
+</head>
+<body>
+    <table id="openTickets" class="table-bordered">
+        <thead>
+            <tr>
+                <th>Request ID</th>
+                <th>Product ID</th>
+                <th>New Price</th>
+                <th>New Quantity</th>
+                <th>Accept Request</th>
+                <th>Decline Request</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor = "let request of requests">
+                <td>{{request._id}}</td>
+                <td>{{request.product_id}}</td>
+                <td>{{request.price}}</td>
+                <td>{{request.quantity}}</td>
+                <td><button class="btn btn-success" (click)="acceptRequest(request._id)">Accept Request</button></td>
+                <td><button class="btn btn-danger" (click)="declineRequest(request._id)">Decline Request</button></td>
+            </tr>
+        </tbody>
+        
+        
+    </table>
+</body>
+</html>

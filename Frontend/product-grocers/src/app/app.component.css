@@ -1,0 +1,26 @@
+.panel{
+  width:200px;
+  height:200px;
+  border:1px solid black;
+  border-radius:20px;
+  text-align:center;
+  line-height: 200px;
+  background-color:white;
+  margin: 10px;
+  box-shadow: 5px 5px;
+  display:inline-block;
+}
+
+.background{
+  background-color:rgb(180, 176, 176);
+}
+
+a{
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+}
+
+a:hover{
+  font-size:20px;
+}

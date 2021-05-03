@@ -1,0 +1,30 @@
+<div>
+    <h2>Add Product</h2>
+    <form #productRef="ngForm" (ngSubmit)="storeProduct(productRef.value)">
+        <table>
+            <tr>
+                <td><label>ProductName</label></td>
+                <td><input type="text" name="name" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Price</label></td>
+                <td><input type="text" name="price" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Quantity</label></td>
+                <td><input type="text" name="quantity" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Descriptipn</label></td>
+                <td><input type="text" name="desc" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>ImageUrl</label></td>
+                <td><input type="text" name="imageUrl" ngModel><br/></td>
+            </tr>
+        </table>
+        <input type="reset" class="btn btn-danger" value="Reset"/>&nbsp;
+        <input type="submit" class="btn btn-primary" value="Store"/>
+        
+    </form>
+</div>

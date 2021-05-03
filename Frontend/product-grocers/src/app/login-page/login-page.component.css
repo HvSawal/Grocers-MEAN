@@ -1,0 +1,48 @@
+.login {
+    height: relative;
+    width: 500px;
+    background-color:white;
+    color:black;
+    align-items: center;
+    margin-left: 500px;
+    border-style: solid;
+    padding-left: 15px;
+    
+    
+    }
+    table{
+        padding-left: 50px;
+    }
+    input[type=text],[type=password]{
+        padding-left: 15px;
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 0.4em;
+    }
+    input[type=button] {
+      background-color: black;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    label{
+        padding-left: 5px;
+        text-decoration-style: double;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+    h2{
+        text-decoration-style: double;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+        text-align: center;
+    }

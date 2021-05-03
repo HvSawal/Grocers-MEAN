@@ -1,0 +1,62 @@
+Collections
+    admins, employees, users -- admin/employee collection with flag and a user collection?
+    orders
+    products
+    requests
+    reports?
+    tickets
+
+Definitions
+admin
+    id
+    userid
+    password
+
+employee
+    id
+    userid
+    firstname
+    lastname
+    emailid
+    password
+
+user
+    id
+    auto-userid
+    firstname
+    lastname
+    emailid
+    password
+    dob
+    phone
+    address
+    funds 
+    orders[{}]
+    user status - defualt:unlocked, locked
+    cart[product{}] (I don't think it's needed)
+
+order
+    id
+    user{}
+    products[{}]
+    total
+    status [default:pending, shipped, out for delivery, delivered, cancelled]
+
+product
+    id
+    name
+    price
+    quantity
+
+request
+    id
+    action [added, deleted, updated]
+    product{}
+    employee{}
+
+
+ticket
+    id
+    user{}
+    reason
+

@@ -1,0 +1,19 @@
+<div>
+    <h2>Add Employee</h2>
+    <form #employeeRef="ngForm" (ngSubmit)="createEmployee(employeeRef.value)">
+        <table>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" name="name" ngModel><br/></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="text" name="email" ngModel><br/></td>
+            </tr>
+        </table>
+        
+        <input type="reset" class="btn btn-danger" value="reset"/>&nbsp;
+        <input type="submit" class="btn btn-primary" value="store"/>
+        
+    </form>
+</div>
