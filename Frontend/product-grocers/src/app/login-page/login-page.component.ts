@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,9 +13,34 @@ export class LoginPageComponent implements OnInit {
 
   login = true;
   attemptsLeft = 3;
-  constructor(public loginSer:LoginService, public userSer:UserService, public route: Router) { }
+  userID:number;
+  isAdmin:boolean = false;
+  isLoggedIn:boolean = false;
+  constructor(public loginSer:LoginService, public userSer:UserService, public route: Router, public empSer: EmployeeService) { }
 
   ngOnInit(): void {
+    this.userID = JSON.parse((localStorage.getItem("userId")));
+    if(this.userID.toString() != ""){
+      this.isLoggedIn = true;
+    }
+    let employee = this.empSer.getEmployee(this.userID).subscribe(employee =>{
+      this.isAdmin = employee[0].isAdmin;
+    });
+
+    //if user -> send to user
+    if(this.isLoggedIn){
+      this.route.navigate(['/home-page']);
+    }
+    // else if(){
+
+    // }
+    // else if(){
+
+    // }
+    // else{
+
+    // }
+
   }
 
   checkLogin(loginRef:any){

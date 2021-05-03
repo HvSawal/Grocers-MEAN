@@ -36,6 +36,10 @@ import { CheckoutCartComponent } from './cart/checkout-cart/checkout-cart.compon
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { AddFundsComponent } from './add-funds/add-funds.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { UserComponent } from './components/home-page/user/user.component';
+import { AdminComponent } from './components/home-page/admin/admin.component';
+import { EmployeeComponent } from './components/home-page/employee/employee.component';
 
 
 
@@ -73,14 +77,18 @@ import { AddFundsComponent } from './add-funds/add-funds.component';
     ProductItemComponent,
     CheckoutCartComponent,
     AddFundsComponent,
+    HomePageComponent,
+    UserComponent,
+    AdminComponent,
+    EmployeeComponent,
 
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      // {
-      //   path: '', pathMatch: 'full', redirectTo: 'login-page'
-      // },
+      {
+        path: '', pathMatch: 'full', redirectTo: 'login-page'
+      },
       {path: 'retrieve-products', component: RetrieveProductsComponent},
       {path: 'add-product', component: AddProductComponent},
       {path: 'delete-product', component: DeleteProductComponent},
@@ -103,6 +111,7 @@ import { AddFundsComponent } from './add-funds/add-funds.component';
       {path: 'generate-reports', component: GenerateReportsComponent},
       {path: 'add-funds', component: AddFundsComponent},
       //{path: '/', redirectTo: '/login-page', pathMatch: 'full'}
+      // {path: 'home-page', component: HomePageComponent}
       
 
     ]),

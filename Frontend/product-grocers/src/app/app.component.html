@@ -9,53 +9,23 @@
   <a class="button" routerLink="/sign-up">Sign Up</a>
   <br> -->
 
-  <div *ngIf="isAdmin" class="background">
-    Admin
-    <br>
-    <div class="panel"><a class="button" routerLink="/add-product">Add Product</a></div>
-    <div class="panel"><a class="button" routerLink="/delete-product">Delete Product</a></div>
-    <div class="panel"><a class="button" routerLink="/update-product">Update Product</a></div>
-    <div class="panel"><a class="button" routerLink="/retrieve-products">Retrieve Products</a></div>
-    <div class="panel"><a class="button" routerLink="/view-requests">View Requests</a></div>
-    <div class="panel"><a class="button" routerLink="/add-employee">Add Employee</a></div>
-    <div class="panel"><a class="button" routerLink="/delete-employee">Delete Employee</a></div>
-    <div class="panel"><a class="button" routerLink="/generate-reports">Generate Reports</a></div>
-    <hr>
-</div>
-
-  <div *ngIf="userID < 1000 && isLoggedIn" class="background">
-    User
-    <br>
-    <div class="panel"><a class="button" routerLink="/cart">Cart</a></div>
-    <div class="panel"><a class="button" routerLink="/orders">Order Status</a></div>
-    <div class="panel"><a class="button" routerLink="/profile-info">Edit Profile</a></div>
-    <div class="panel"><a class="button" routerLink="/add-funds">Add funds</a></div>
-    <hr>
+  <div class="row">
+    <app-home-page></app-home-page>
   </div>
 
-  <div *ngIf="userID > 1000 && !isAdmin" class="background">
-    Employee
-    <br>
-    <div class="panel"><a class="button" routerLink="/send-requests">Send Request</a></div>
-    <div class="panel"><a class="button" routerLink="/update-order">Update Order</a></div>
-    <div class="panel"><a class="button" routerLink="/employee-ticket">Unlock Users</a></div>
-    <div class="panel"><a class="button" routerLink="/edit-employees">Edit Profile</a></div>
-    <hr/>
-  </div>
+ 
  
   <div class="row">
     <router-outlet></router-outlet>
   </div>
-
-  <!-- <div class="row">
-    <div class="col">
-      <app-cart></app-cart>
-    </div>
-  </div> -->
   
 
 
 </div>
-<footer class="fixed-bottom">
+<!-- <footer class="fixed-bottom">
+  <app-footer></app-footer>
+</footer> -->
+
+<footer>
   <app-footer></app-footer>
 </footer>

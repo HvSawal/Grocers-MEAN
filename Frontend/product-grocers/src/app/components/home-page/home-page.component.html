@@ -1,0 +1,19 @@
+
+<div class="row">
+    <div *ngIf="isAdmin">
+        <app-admin></app-admin>
+    </div>
+    <div *ngIf="userID < 1000 && isLoggedIn">
+        <app-user></app-user>
+    </div>
+    <div *ngIf="userID > 1000 && !isAdmin">
+        <app-employee></app-employee>
+    </div>
+</div>
+
+
+ 
+
+
+
+
